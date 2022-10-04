@@ -4,8 +4,10 @@ import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/providers/orders.dart';
 import 'package:shop_app/providers/products.dart';
 import 'package:shop_app/screens/cart_screen.dart';
+import 'package:shop_app/screens/edit_product_screen.dart';
 import 'package:shop_app/screens/orders_screen.dart';
 import 'package:shop_app/screens/product_detail_screen.dart';
+import 'package:shop_app/screens/user_products_screen.dart';
 
 import './screens/products_overview_screen.dart';
 
@@ -29,13 +31,17 @@ class MyApp extends StatelessWidget {
               .copyWith(secondary: Colors.deepOrange),
           fontFamily: 'Lato',
         ),
-        home: ProductsOverviewScreen(),
+        home: const ProductsOverviewScreen(),
         routes: {
           ProductDetailScreen.routeName: (ctx) => const ProductDetailScreen(),
           CartScreen.routeName: (ctx) => const CartScreen(),
           OrdersScreen.routeName: (ctx) => OrdersScreen(
                 ordersData: Provider.of<Orders>(ctx),
               ),
+          UserProductsScreen.routeName: (ctx) => UserProductsScreen(
+                productsData: Provider.of<Products>(ctx),
+              ),
+          EditProductScreen.routeName: (ctx) => EditProductScreen(),
         },
       ),
     );
