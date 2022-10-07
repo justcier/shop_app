@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CartItem {
-  final String id;
-  final String title;
+  final String? id;
+  final String? title;
   final int quantity;
   final double price;
 
   CartItem({
-    required this.id,
-    required this.title,
+    this.id,
+    this.title,
     required this.quantity,
     required this.price,
   });
